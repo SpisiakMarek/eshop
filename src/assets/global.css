@@ -116,7 +116,9 @@ a:hover {
 
 .products-header {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 20px;
 }
 
 .products-browser-wraper {
@@ -127,7 +129,9 @@ a:hover {
 
 .products-filter-wrapper {
   border: solid;
-  width: 280px;
+  width: 250px;
+  flex-grow: 0;
+  flex-shrink: 0;
   height: 200vh;
   margin: 10px;
 }
@@ -140,6 +144,8 @@ a:hover {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(8, 1fr);
   grid-gap: 5px;
+  flex-shrink: 1;
+  flex-grow: 1;
 }
 
 .product-wrapper {
@@ -159,7 +165,7 @@ a:hover {
 }
 
 .product-text {
-  font-size: 2vw;
+  font-size: 1.8vw;
 }
 
 .carousel-button {
@@ -185,14 +191,39 @@ a:hover {
   height: 50px;
 }
 
+@media only screen and (max-width: 1016px) {
+  .products-list-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .product-text {
+    font-size: 2.3vw;
+  }
+}
+
 @media only screen and (max-width: 770px) {
   .products-navbar-wrapper {
     flex-direction: column;
+  }
+
+  .products-browser-wraper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .products-filter-wrapper {
+    order: 99;
+    width: 90vw;
   }
 }
 
 @media only screen and (max-width: 300px) {
   .home-navbar {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .products-header {
     flex-direction: column;
   }
 }
@@ -208,6 +239,11 @@ a:hover {
   flex-grow: 1;
   margin-bottom: 0 !important;
   text-align: center;
+}
+
+.products-header-button {
+  flex-grow: 1;
+  border: 0;
 }
 /* .basket-button {
   background-color: black;
