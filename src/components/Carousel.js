@@ -16,17 +16,17 @@ function Carousel() {
   const elements = [
     {
       id: "1. picture.jpg",
-      src: require("../assets/1. picture.jpg"),
+      src: require("../assets/homebarCarousel/1. picture.jpg"),
       text: "boty 1",
     },
     {
       id: "2. picture.jpg",
-      src: require("../assets/2. picture.jpg"),
+      src: require("../assets/homebarCarousel/2. picture.jpg"),
       text: "boty 2",
     },
     {
       id: "3. picture.jpg",
-      src: require("../assets/3. picture.jpg"),
+      src: require("../assets/homebarCarousel/3. picture.jpg"),
       text: "boty 3",
     },
   ];

@@ -1,13 +1,25 @@
+import Product from "../../../components/Product";
+
 function MenClothing() {
   return (
     <div className="products-wrapper">
-      <header>
+      <header className="products-header">
         <button>ponozky</button>
         <button>tricka</button>
         <button>rifle</button>
       </header>
-      <div className="filter-wrapper"></div>
-      <div className="producst-wrapper"></div>
+      <div className="products-browser-wraper">
+        <div className="products-filter-wrapper">filter</div>
+        <div className="products-list-wrapper">
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+        </div>
+      </div>
     </div>
   );
 }
