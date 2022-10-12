@@ -4,7 +4,7 @@ import UserNavbar from "./components/UserNavbar";
 function Header(props) {
   const { handleSetLoginInUse } = props;
   return (
-    <header>
+    <header className="main-header">
       <Link className="siteName" to="/">
         Eshop
       </Link>

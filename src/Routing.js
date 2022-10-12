@@ -6,7 +6,7 @@ import {
   Link,
   useLocation,
 } from "react-router-dom";
-import PrimaryNavbar from "./components/LinksNavbar";
+import HomeNavbar from "./components/HomeNavbar";
 
 import Home from "./pages/Home";
 import Kids from "./pages/Kids";
@@ -48,7 +48,7 @@ function App() {
     <div>
       {loginInUse ? <Auth handleSetLoginInUse={handleSetLoginInUse} /> : null}
       <Header handleSetLoginInUse={handleSetLoginInUse} />
-      <PrimaryNavbar links={links} linkLevel={1} />
+      <HomeNavbar links={links} linkLevel={1} />
       <Routes>
         <Route path="/" element={<Home />}></Route>
 

@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-import LinksNavbar from "../../components/LinksNavbar";
+import LinksNavbar from "../../components/HomeNavbar";
 
 function Women() {
   const links = [

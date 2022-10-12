@@ -3,14 +3,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-nav {
+.home-navbar {
   background-color: black;
   color: white;
   display: flex;
   justify-content: flex-start;
 }
 /* funguje na Link component */
-nav a {
+.home-navbar-link {
   font-size: 20px;
   color: white;
   text-decoration: none;
@@ -18,7 +18,7 @@ nav a {
   margin: 2px 10px;
 }
 
-header {
+.main-header {
   text-align: center;
   font-size: 50px;
   background-color: black;

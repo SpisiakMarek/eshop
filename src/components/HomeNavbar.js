@@ -1,16 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
 
-function PrimaryNavbar(props) {
+function HomeNavbar(props) {
   const { links } = props;
   const { linkLevel } = props;
   const location = useLocation();
 
   return (
-    <nav className="homeNavbar">
+    <nav className="home-navbar">
       {links.map((element) => {
         return (
           <Link
             to={element.link}
+            className={"home-navbar-link"}
             style={{
               textDecoration:
                 location.pathname.split("/")[linkLevel] == element.link
@@ -26,4 +27,4 @@ function PrimaryNavbar(props) {
   );
 }
 
-export default PrimaryNavbar;
+export default HomeNavbar;
