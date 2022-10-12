@@ -19,14 +19,10 @@ import Women from "./pages/Women";
 import WomenClothing from "./pages/Women/WomenClothing";
 import WomenShoes from "./pages/Women/WomenShoes";
 
-function App() {
-  const location = useLocation();
+import Header from "./Header";
 
+function App() {
   const links = [
-    {
-      link: "",
-      text: "Home",
-    },
     {
       link: "men",
       text: "Men",
@@ -43,6 +39,7 @@ function App() {
 
   return (
     <div>
+      <Header />
       <PrimaryNavbar links={links} linkLevel={1} />
       <Routes>
         <Route path="/" element={<Home />}></Route>
