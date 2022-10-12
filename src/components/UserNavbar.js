@@ -1,20 +1,13 @@
 import { Link, Outlet } from "react-router-dom";
+import BasketButton from "./BasketButton";
+import LoginButton from "./LoginButton";
 
-function UserNavbar() {
+function UserNavbar(props) {
+  const { handleSetLoginInUse } = props;
   return (
     <div className="userNavbar">
-      <i class="fas fa-sign-in-alt">asd</i>
-      <button
-        className="bi bi-box-arrow-in-right"
-        onClick={() => {
-          console.log("kosik");
-        }}
-      ></button>
-      <button
-        onClick={() => {
-          console.log("login");
-        }}
-      ></button>
+      <BasketButton />
+      <LoginButton handleSetLoginInUse={handleSetLoginInUse} />
     </div>
   );
 }

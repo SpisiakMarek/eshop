@@ -21,7 +21,14 @@ import WomenShoes from "./pages/Women/WomenShoes";
 
 import Header from "./Header";
 
+import Auth from "./pages/Auth";
+
 function App() {
+  const [loginInUse, setLoginInUse] = useState(false);
+
+  const handleSetLoginInUse = (input) => {
+    setLoginInUse(input);
+  };
   const links = [
     {
       link: "men",
@@ -39,7 +46,8 @@ function App() {
 
   return (
     <div>
-      <Header />
+      {loginInUse ? <Auth handleSetLoginInUse={handleSetLoginInUse} /> : null}
+      <Header handleSetLoginInUse={handleSetLoginInUse} />
       <PrimaryNavbar links={links} linkLevel={1} />
       <Routes>
         <Route path="/" element={<Home />}></Route>

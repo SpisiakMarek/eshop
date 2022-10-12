@@ -68,3 +68,49 @@ a:hover {
   height: 100%;
   object-fit: cover;
 }
+
+.auth-container {
+  height: 90vh;
+  width: 80vw;
+  max-width: 400px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  z-index: 10;
+  flex-direction: column;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.auth-login-button {
+  background-color: black;
+  color: white;
+  margin: 10px 0px;
+}
+
+.auth-type-container {
+  display: flex;
+  justify-content: center;
+}
+
+.auth-type-button {
+  border: 0;
+  background-color: white;
+}
+
+.auth-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.57);
+  border: 0;
+}
+
+/* .basket-button {
+  background-color: black;
+} */
