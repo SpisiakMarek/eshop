@@ -1,15 +1,7 @@
-
-import {useState, useEffect} from 'react'
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
-
+import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
-
   // const welcomeMessages = ["in React", "in C#", "in JS"]
 
   // const [actualValue, setActualValue] = useState(0)
@@ -45,15 +37,13 @@ function App() {
   //         </Route>
   //         <Route path="/third" element = {<Third />}>
   //         </Route>
-  //         <Route path="/" element = {<Second />}> 
+  //         <Route path="/" element = {<Second />}>
   //         </Route>
   //       </Routes>
   //     </div>
   //   </Router>
 
-  return (
-    <div>Hello World</div>
-  );
+  return <div>Hello World</div>;
 }
 
 export default App;
