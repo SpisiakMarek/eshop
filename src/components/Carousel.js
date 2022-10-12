@@ -67,7 +67,7 @@ function Carousel() {
             />
             <Carousel2.Caption>
               <p>{element.text}</p>
-              <button>TODO Button</button>
+              <button className="carousel-button">TODO Button</button>
             </Carousel2.Caption>
           </Carousel2.Item>
         );

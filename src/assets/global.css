@@ -28,7 +28,7 @@ body {
   justify-content: center;
 }
 a:hover {
-  color: white !important;
+  color: inherit !important;
 }
 
 .userNavbar {
@@ -156,6 +156,58 @@ a:hover {
 .product {
   width: 100%;
   height: 80%;
+}
+
+.product-text {
+  font-size: 2vw;
+}
+
+.carousel-button {
+  background-color: rgba(255, 255, 255, 0.708);
+  border: solid;
+  border-color: white;
+  border-radius: 10px;
+}
+
+.products-navbar-button {
+  display: flex;
+  flex-grow: 1;
+  height: 60px;
+  align-items: center;
+  border: 0;
+  text-decoration: none;
+  color: black;
+  background-color: #f0f0f0;
+}
+
+.products-navbar-button-image {
+  flex-shrink: 1;
+  height: 50px;
+}
+
+@media only screen and (max-width: 770px) {
+  .products-navbar-wrapper {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .home-navbar {
+    flex-direction: column;
+  }
+}
+
+.products-navbar-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 20px;
+}
+
+.products-navbar-button-text {
+  flex-grow: 1;
+  margin-bottom: 0 !important;
+  text-align: center;
 }
 /* .basket-button {
   background-color: black;

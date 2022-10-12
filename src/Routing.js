@@ -33,14 +33,17 @@ function App() {
     {
       link: "men",
       text: "Men",
+      src: require("./assets/productsNavbar/men.jpg"),
     },
     {
       link: "women",
       text: "Women",
+      src: require("./assets/productsNavbar/women.jpg"),
     },
     {
       link: "kids",
       text: "Kids",
+      src: require("./assets/productsNavbar/kids.jpg"),
     },
   ];
 
@@ -50,7 +53,7 @@ function App() {
       <Header handleSetLoginInUse={handleSetLoginInUse} />
       <HomeNavbar links={links} linkLevel={1} />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<Home links={links} />}></Route>
 
         <Route path="/men" element={<Men />}>
           <Route path="clothing" element={<MenClothing />}></Route>

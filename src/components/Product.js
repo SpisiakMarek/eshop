@@ -7,8 +7,10 @@ function Product(props) {
         className="product"
         src={require("../assets/men/clothing/holder.jpeg")}
       ></img>
-      <div>nazov</div>
-      <div>cena</div>
+      <div>
+        <div className="product-text">nazov</div>
+        <div className="product-text">cena</div>
+      </div>
     </div>
   );
 }
