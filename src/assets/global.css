@@ -135,6 +135,7 @@ a:hover {
   flex-shrink: 0;
   height: 200vh;
   margin: 10px;
+  padding: 10px;
 }
 
 .products-list-wrapper {
@@ -245,6 +246,19 @@ a:hover {
 .products-header-button {
   flex-grow: 1;
   border: 0;
+}
+
+.filter-item {
+  display: flex;
+}
+
+.filter-item > p {
+  margin: 0px !important;
+}
+
+.filter-list {
+  padding: 0;
+  list-style-type: none;
 }
 /* .basket-button {
   background-color: black;
