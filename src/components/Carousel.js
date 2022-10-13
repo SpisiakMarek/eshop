@@ -56,7 +56,7 @@ function Carousel() {
   // </div>
 
   return (
-    <Carousel2 interval={9999999}>
+    <Carousel2 interval={4000}>
       {elements.map((element) => {
         return (
           <Carousel2.Item>
