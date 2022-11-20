@@ -16,9 +16,13 @@ function Register(props) {
     await getDocs(query(usersCollectionRef, where("email", "==", email))).then(
       (output) => {
         if (output.empty) {
-          addDoc(usersCollectionRef, { email: email, password: password });
-          setLoggedUser(output.docs[0].id);
+          addDoc(usersCollectionRef, { email: email, password: password }).then(
+            (output) => {
+              setLoggedUser(output.id);
+            }
+          );
           setLoginInUse(false);
+          window.alert("uspesna registracia");
         } else {
           window.alert("email sa pouziva");
         }

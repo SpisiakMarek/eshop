@@ -10,6 +10,7 @@ import {
   connectFirestoreEmulator,
   doc,
   getDoc,
+  deleteDoc,
 } from "firebase/firestore";
 import { db } from "./../../firebase-config";
 
@@ -19,8 +20,7 @@ function UserMenu(props) {
   const [changingPassword, setChangingPassword] = useState(false);
   const [oldPassword, setOldPassword] = useState();
   const [newPassword, setNewPassword] = useState();
-
-  const usersCollectionRef = collection(db, "users");
+  const { setLoggedUser } = props;
 
   const changePassword = async (event) => {
     event.preventDefault();
@@ -46,6 +46,18 @@ function UserMenu(props) {
     });
   };
 
+  const deleteAccount = async () => {
+    const userDoc = doc(db, "users", loggedUser);
+    console.log(userDoc);
+    deleteDoc(userDoc);
+    window.location.reload(true);
+  };
+
+  const logout = () => {
+    handleSetLoginInUse(false);
+    setLoggedUser(false);
+  };
+
   return (
     <>
       <div
@@ -62,7 +74,12 @@ function UserMenu(props) {
         >
           Zmeniť heslo
         </button>
-        <button className="delete-account-button">Odstrániť účet</button>
+        <button className="auth-login-button" onClick={logout}>
+          Odhlasit
+        </button>
+        <button className="delete-account-button" onClick={deleteAccount}>
+          Odstrániť účet
+        </button>
         {changingPassword ? (
           <form className="d-flex flex-column" onSubmit={changePassword}>
             <b>Stare heslo</b>

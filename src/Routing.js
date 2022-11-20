@@ -65,6 +65,7 @@ function App() {
           loggedUser={loggedUser}
           setLoginInUse={setLoginInUse}
           userName={loggedUser}
+          setLoggedUser={setLoggedUser}
         />
       ) : null}
       <Header handleSetLoginInUse={handleSetLoginInUse} />
