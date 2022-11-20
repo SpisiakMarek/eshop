@@ -6,6 +6,7 @@ import Register from "./Register";
 function Auth(props) {
   const [state, setState] = useState("login");
   const { handleSetLoginInUse } = props;
+  const { setLoggedUser } = props;
   return (
     <>
       <div

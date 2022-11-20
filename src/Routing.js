@@ -25,6 +25,7 @@ import Auth from "./pages/Auth";
 
 function App() {
   const [loginInUse, setLoginInUse] = useState(false);
+  const [loggedUser, setLoggedUser] = useState();
 
   const handleSetLoginInUse = (input) => {
     setLoginInUse(input);
@@ -49,7 +50,13 @@ function App() {
 
   return (
     <div>
-      {loginInUse ? <Auth handleSetLoginInUse={handleSetLoginInUse} /> : null}
+      {loginInUse ? (
+        <Auth
+          handleSetLoginInUse={handleSetLoginInUse}
+          loggedUser={loggedUser}
+          setLoggedUser={setLoggedUser}
+        />
+      ) : null}
       <Header handleSetLoginInUse={handleSetLoginInUse} />
       <HomeNavbar links={links} linkLevel={1} />
       <Routes>
