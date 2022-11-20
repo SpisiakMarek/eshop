@@ -1,6 +1,27 @@
 import Product from "../../../components/Product";
+import { useEffect, useState } from "react";
+import { db } from "./../../../firebase-config";
+import { collection, doc, getDocs } from "firebase/firestore";
 
 function MenClothing() {
+  const [products, setProducts] = useState();
+  const productsCollectionRef = collection(db, "menClothing");
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const data = await getDocs(productsCollectionRef);
+      setProducts(
+        data.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }))
+      );
+    };
+    getProducts();
+  }, []);
+
+  console.log(products);
+
   return (
     <div className="products-wrapper">
       <header className="products-header">
@@ -104,13 +125,9 @@ function MenClothing() {
           </ul>
         </div>
         <div className="products-list-wrapper">
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+          {products.map((data) => {
+            return <Product data={data}></Product>;
+          })}
         </div>
       </div>
     </div>
