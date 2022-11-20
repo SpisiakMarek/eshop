@@ -17,7 +17,7 @@ function Register(props) {
       (output) => {
         if (output.empty) {
           addDoc(usersCollectionRef, { email: email, password: password });
-          setLoggedUser(email);
+          setLoggedUser(output.docs[0].id);
           setLoginInUse(false);
         } else {
           window.alert("email sa pouziva");

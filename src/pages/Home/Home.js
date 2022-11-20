@@ -4,15 +4,18 @@ import ProductsNavbarButton from "../../components/ProductsNavbarButton";
 
 function Home(props) {
   const { links } = props;
-  console.log(links);
   return (
     <div>
       <Carousel />
 
       <div className="products-navbar-wrapper">
-        {links.map((element) => {
+        {links.map((element, index) => {
           return (
-            <ProductsNavbarButton imgSrc={element.src} link={element.link}>
+            <ProductsNavbarButton
+              imgSrc={element.src}
+              link={element.link}
+              key={index}
+            >
               {element.text}
             </ProductsNavbarButton>
           );

@@ -263,3 +263,10 @@ a:hover {
 /* .basket-button {
   background-color: black;
 } */
+
+.delete-account-button {
+  background-color: red;
+  color: white;
+  margin: 10px 0px;
+  border-color: red;
+}

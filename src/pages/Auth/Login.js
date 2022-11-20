@@ -18,7 +18,7 @@ function Login(props) {
         if (output.empty || output.docs[0].data().password != password) {
           window.alert("zly email alebo heslo");
         } else {
-          setLoggedUser(email);
+          setLoggedUser(output.docs[0].id);
           setLoginInUse(false);
         }
       }

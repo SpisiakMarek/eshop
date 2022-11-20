@@ -7,9 +7,10 @@ function HomeNavbar(props) {
 
   return (
     <nav className="home-navbar">
-      {links.map((element) => {
+      {links.map((element, index) => {
         return (
           <Link
+            key={index}
             to={element.link}
             className={"home-navbar-link"}
             style={{

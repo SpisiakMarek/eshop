@@ -57,9 +57,9 @@ function Carousel() {
 
   return (
     <Carousel2 interval={4000}>
-      {elements.map((element) => {
+      {elements.map((element, index) => {
         return (
-          <Carousel2.Item>
+          <Carousel2.Item key={index}>
             <img
               className="carousel-element"
               src={element.src}
