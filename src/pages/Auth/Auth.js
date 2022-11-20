@@ -34,7 +34,17 @@ function Auth(props) {
             Register
           </button>
         </div>
-        {state == "login" ? <Login /> : <Register />}
+        {state == "login" ? (
+          <Login
+            setLoggedUser={setLoggedUser}
+            setLoginInUse={handleSetLoginInUse}
+          />
+        ) : (
+          <Register
+            setLoggedUser={setLoggedUser}
+            setLoginInUse={handleSetLoginInUse}
+          />
+        )}
       </div>
     </>
   );

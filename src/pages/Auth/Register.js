@@ -3,17 +3,22 @@ import { useState } from "react";
 import { collection, getDocs, addDoc, query, where } from "firebase/firestore";
 import { db } from "./../../firebase-config";
 
-function Register() {
+function Register(props) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const { setLoggedUser } = props;
+  const { setLoginInUse } = props;
 
   const usersCollectionRef = collection(db, "users");
 
-  const registerUser = async () => {
+  const registerUser = async (event) => {
+    event.preventDefault();
     await getDocs(query(usersCollectionRef, where("email", "==", email))).then(
       (output) => {
         if (output.empty) {
           addDoc(usersCollectionRef, { email: email, password: password });
+          setLoggedUser(email);
+          setLoginInUse(false);
         } else {
           window.alert("email sa pouziva");
         }
@@ -22,7 +27,7 @@ function Register() {
   };
 
   return (
-    <form action="#" className="d-flex flex-column" onSubmit={registerUser}>
+    <form className="d-flex flex-column" onSubmit={registerUser}>
       <b>E-mail</b>
       <input
         type="email"

@@ -23,6 +23,8 @@ import Header from "./Header";
 
 import Auth from "./pages/Auth";
 
+import UserMenu from "./pages/UserMenu";
+
 function App() {
   const [loginInUse, setLoginInUse] = useState(false);
   const [loggedUser, setLoggedUser] = useState();
@@ -50,11 +52,18 @@ function App() {
 
   return (
     <div>
-      {loginInUse ? (
+      {loginInUse && !loggedUser ? (
         <Auth
           handleSetLoginInUse={handleSetLoginInUse}
           loggedUser={loggedUser}
           setLoggedUser={setLoggedUser}
+        />
+      ) : null}
+      {loginInUse && loggedUser ? (
+        <UserMenu
+          handleSetLoginInUse={handleSetLoginInUse}
+          loggedUser={loggedUser}
+          setLoginInUse={setLoginInUse}
         />
       ) : null}
       <Header handleSetLoginInUse={handleSetLoginInUse} />
