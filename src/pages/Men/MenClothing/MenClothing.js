@@ -1,10 +1,10 @@
 import Product from "../../../components/Product";
 import { useEffect, useState } from "react";
 import { db } from "./../../../firebase-config";
-import { collection, doc, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 function MenClothing() {
-  const [products, setProducts] = useState();
+  const [products, setProducts] = useState([]);
   const productsCollectionRef = collection(db, "menClothing");
 
   useEffect(() => {
