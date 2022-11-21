@@ -1,1 +1,2 @@
-link http://139.162.187.232:3000/
+docker build -t app-name
+docker run -p 3000:3000 app-name
