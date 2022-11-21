@@ -2,7 +2,6 @@ import { Link, Outlet } from "react-router-dom";
 
 function Product(props) {
   const { data } = props;
-  console.log(data);
 
   return (
     <div className="product-wrapper">

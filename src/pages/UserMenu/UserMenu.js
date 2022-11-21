@@ -28,9 +28,14 @@ function UserMenu(props) {
     await getDoc(userDoc).then((output) => {
       const data = output.data();
       if (data.password == oldPassword) {
-        updateDoc(userDoc, { password: newPassword });
-        setChangingPassword(false);
-        window.alert("heslo uspesne zmenene");
+        updateDoc(userDoc, { password: newPassword })
+          .then(() => {
+            setChangingPassword(false);
+            window.alert("heslo uspesne zmenene");
+          })
+          .catch((e) => {
+            window.alert("kratke heslo");
+          });
       } else {
         window.alert("zle heslo");
       }
@@ -48,7 +53,6 @@ function UserMenu(props) {
 
   const deleteAccount = async () => {
     const userDoc = doc(db, "users", loggedUser);
-    console.log(userDoc);
     deleteDoc(userDoc);
     window.location.reload(true);
   };

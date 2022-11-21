@@ -20,8 +20,6 @@ function MenClothing() {
     getProducts();
   }, []);
 
-  console.log(products);
-
   return (
     <div className="products-wrapper">
       <header className="products-header">
@@ -125,8 +123,8 @@ function MenClothing() {
           </ul>
         </div>
         <div className="products-list-wrapper">
-          {products.map((data) => {
-            return <Product data={data}></Product>;
+          {products.map((data, index) => {
+            return <Product data={data} key={index}></Product>;
           })}
         </div>
       </div>
